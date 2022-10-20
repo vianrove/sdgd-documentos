@@ -1,12 +1,13 @@
 const mysql2 = require('mysql2');
 
-const { userdb, password_db, database, host } = require('./config')
+const { userdb, password_db, database, host, portdb } = require('./config')
 
 const connection = mysql2.createConnection({
     host: host,
     user: userdb,
     password:password_db,
-    database: database
+    database: database,
+    port: portdb
 });
 
 connection.connect((err)=>{
@@ -52,7 +53,7 @@ function readSpecific2(data, callback){
     })
 }
 
-//Acutaliza Usuario del estado de su Suscripcion true o false
+
 function update(data, callback){
     let UpdateQuery = `UPDATE documents SET muestra = ${data.muestra} where ISBN = ${data.ISBN}`;
     connection.query(UpdateQuery, (err, result)=>{
