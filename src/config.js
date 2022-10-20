@@ -2,7 +2,7 @@ const { config } = require("dotenv");
 
 config()
 
-const PORT = process.env.port || 5000
+const PORT = process.env.port 
 const userdb = process.env.user || 'root'
 const password_db = process.env.password || ''
 const database = process.env.database || ''
