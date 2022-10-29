@@ -1,6 +1,10 @@
-const {insert, read, update, dbDelete, readSpecific, readSpecific2} = require('./db')
+const {insert, read, update, dbDelete, readSpecific, readSpecific2} = require('./db.js')
 const express = require('express');
-const {PORT} = require('./config')
+const { config } =  require('dotenv')
+
+config()
+const PORT = process.env.PORT || 8080;
+
 const app = express();
 
 
@@ -78,4 +82,3 @@ app.use((req,res)=>{
 })
 
 app.listen(PORT,()=>console.log(`Express iniciado en el puerto ... ${PORT}`));
-// 
