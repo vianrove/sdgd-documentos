@@ -18,7 +18,7 @@ connection.connect((err)=>{
 //metodos :
 
 function insert(data, callback){
-    let insertQuery = `INSERT INTO documents values (0,'${data.Title}',${data.muestra},${data.venta},${data.precio})`;
+    let insertQuery = `INSERT INTO documents values (0,'${data.Title}',${data.muestra},${data.venta},${data.precio},${data.img1},${data.img2})`;
     connection.query(insertQuery, (err, result)=>{
         if(err) throw err;
         callback(result);
