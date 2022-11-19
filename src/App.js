@@ -1,12 +1,12 @@
 const {insert, read, update, dbDelete, readSpecific, readSpecific2} = require('./db.js')
 const express = require('express');
 const { config } =  require('dotenv')
-
+const cors = require('cors')
 config()
 const PORT = process.env.PORT || 8080;
 
 const app = express();
-
+app.use(cors())
 
 app.use(express.json())
 
