@@ -55,7 +55,7 @@ function readSpecific2(data, callback){
 
 
 function update(data, callback){
-    let UpdateQuery = `UPDATE documents SET muestra = ${data.muestra} where ISBN = ${data.ISBN}`;
+    let UpdateQuery = `UPDATE documents SET muestra = ${data.muestra}, venta=${data.venta}, precio=${data.precio} where ISBN = ${data.ISBN}`;
     connection.query(UpdateQuery, (err, result)=>{
         if(err) throw err;
         callback(result); 
