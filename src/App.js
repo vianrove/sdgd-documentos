@@ -73,7 +73,7 @@ app.delete('/delete/:id',(req,res)=>{
     /*if(req.body.ISBN == null){
         res.status(404).json({"message":"Not found"});
     }else{*/
-       dbDelete(req.params.ISBN, (result)=>res.json(result))
+       dbDelete(parseInt(req.params.id), (result)=>res.json(result))
     //}
 })
 
