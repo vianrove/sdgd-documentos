@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json())
 
 app.get('/',(req,res)=>{
-    res.send('\tBienvenido a Libreria (API) ')
+    res.send('\tBienvenido a Libreria de DocHub (API) ')
 })
 
 app.get('/catalogo',(req,res)=>{
